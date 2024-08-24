@@ -5,6 +5,7 @@ require:
   - rubocop-rake
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
   DisabledByDefault: false
