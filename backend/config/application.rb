@@ -33,8 +33,16 @@ module Backend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.middleware.use ActionDispatch::Flash
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.insert_after Rack::Runtime, Rack::MethodOverride
+    config.middleware.insert_after ActiveRecord::Migration::CheckPending, ActionDispatch::Cookies
+    config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CookieStore
+    config.middleware.insert_after ActionDispatch::Session::CookieStore, ActionDispatch::Flash
+    config.middleware.use ActionDispatch::ContentSecurityPolicy::Middleware
+    config.middleware.use ActionDispatch::PermissionsPolicy::Middleware
+    config.middleware.use Rack::TempfileReaper
+
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/*.{rb,yml}')]
+    I18n.available_locales = [:en]
+    config.i18n.default_locale = :en
   end
 end
