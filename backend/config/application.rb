@@ -34,7 +34,7 @@ module Backend
     config.api_only = true
 
     config.middleware.insert_after Rack::Runtime, Rack::MethodOverride
-    config.middleware.insert_after ActiveRecord::Migration::CheckPending, ActionDispatch::Cookies
+    config.middleware.insert_after ActionDispatch::Callbacks, ActionDispatch::Cookies
     config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CookieStore
     config.middleware.insert_after ActionDispatch::Session::CookieStore, ActionDispatch::Flash
     config.middleware.use ActionDispatch::ContentSecurityPolicy::Middleware
