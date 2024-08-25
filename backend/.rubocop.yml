@@ -5,6 +5,7 @@ require:
   - rubocop-rake
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
   DisabledByDefault: false
@@ -13,3 +14,6 @@ AllCops:
   Exclude:
     - db/schema.rb
     - vendor/**/*
+
+Style/Documentation:
+  Enabled: false
