@@ -1,0 +1,12 @@
+<div>
+  <h4 class="text-lg font-semibold">MeApp</h4>
+  <p>© 2024 All rights reserved.</p>
+</div>
+
+<div class="space-x-4">
+  <% { instagram: 'https://www.instagram.com', twitter: 'https://www.twitter.com', linkedIn: 'https://www.linkedin.com'  }.each do |social_network, link| %>
+    <a href=<%= link %> class="text-gray-300 hover:text-teal-500">
+      <%= social_network.capitalize %>
+    </a>
+  <% end %>
+</div>

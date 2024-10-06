@@ -1,0 +1,131 @@
+<!-- Header Section -->
+<div class="h-24 px-8 flex items-center justify-between bg-white dark:bg-gray-900 shadow-md">
+  <h1 class="text-4xl font-extrabold text-gray-900 dark:text-teal-400">
+    MeApp
+  </h1>
+
+  <!-- Navigation Bar -->
+  <nav class="flex space-x-8">
+    <div class="relative group">
+      <a href="#" class="text-gray-700 dark:text-gray-300 font-semibold">Home</a>
+    </div>
+    <div class="relative group">
+      <a href="#" class="text-gray-700 dark:text-gray-300 font-semibold">Posts</a>
+    </div>
+    <div class="relative group">
+      <a href="#" class="text-gray-700 dark:text-gray-300 font-semibold">MeSpace</a>
+    </div>
+  </nav>
+
+  <!-- Theme Toggle Switch with Icons -->
+  <div class="flex items-center justify-center">
+    <button id="theme-toggle"
+            data-action="click->theme#toggle"
+            class="w-14 h-14 bg-teal-500 text-white rounded-full shadow-md flex items-center justify-center hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-75 transition duration-300 ease-in-out">
+      <!-- Developer Icon (Dark Mode) -->
+      <svg id="moon-icon" class="w-10 h-10 text-gray-200 hidden dark:block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 15 245 190" style="enable-background:new 0 0 256 165;" xml:space="preserve">
+      <path d="M84.2,2.4c18.7,0,33.8,15.1,33.8,33.8S102.9,70,84.2,70S50.4,54.9,50.4,36.2S65.5,2.4,84.2,2.4z M156.3,122.2l-21.8,63H88.6
+        v-3.9c0-6.5-5.3-11.8-11.8-11.8H33.5v-43.3c0-2.2,1.8-3.9,3.9-3.9s3.9,1.8,3.9,3.9v35.4h35.4c9.5,0,17.5,6.8,19.3,15.8h32.8
+        l17.7-51.4c-4.4-9.1-8.9-18.3-12.3-24.4c-6.7-14.4-21.4-24.4-38.3-24.4H44.2C20.9,77.1,2,96.1,2,119.3v63.6
+        c0,9.8,7.9,17.7,17.7,17.7H227l3.6-10.3l23.4-68.1H156.3z M197.6,168.1c-4.3,0-7.8-2.2-7.8-5c0-2.8,3.5-5,7.8-5c4.3,0,7.8,2.2,7.8,5
+        C205.4,165.8,201.9,168.1,197.6,168.1z"/>
+      </svg>
+      <!-- Person Icon (Light Mode) -->
+      <svg id="sun-icon" class="w-6 h-6 text-yellow-400 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 3.22l.894-1.788A1 1 0 0112 1.658v2.684a1 1 0 01-1 1H8.5a1 1 0 01-.894-1.488L10 3.22zM3.22 10l-1.788-.894a1 1 0 01.632-1.894H4.22a1 1 0 011 1v2.632a1 1 0 01-1 1H2.862a1 1 0 01-.632-1.894L3.22 10zM10 16.78l-.894 1.788a1 1 0 01-1.788-.894V14.5a1 1 0 011-1h2.632a1 1 0 011 1v2.632a1 1 0 01-1 1h-1.768zM16.78 10l1.788.894a1 1 0 01-.632 1.894H15.78a1 1 0 01-1-1V8.362a1 1 0 011-1h2.632a1 1 0 01.632 1.894L16.78 10zM10 12a2 2 0 110-4 2 2 0 010 4zm0 1.414A3.414 3.414 0 1010 6.586 3.414 3.414 0 0010 13.414z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Profile Section -->
+<div class="flex items-center space-x-4 mt-8 px-8">
+  <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-30 h-30 rounded-full shadow-md">
+  <div>
+    <h2 class="text-4xl font-extrabold text-gray-900 dark:text-teal-500 leading-tight mb-2">
+      I'm Kirill, Software Engineer
+    </h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-6">
+      A passionate developer with a love for Ruby on Rails. This is the place where I share my thoughts and experience
+    </p>
+    <!-- Subscribe Button -->
+    <button id="subscribe-btn"
+            class="px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-75 transition duration-300 ease-in-out">
+      Subscribe
+    </button>
+  </div>
+</div>
+
+<!-- Latest Posts Section -->
+<div class="mt-16 px-8">
+  <h2 class="text-3xl font-extrabold text-gray-900 dark:text-teal-500 leading-tight mb-4">
+    Latest Posts
+  </h2>
+  <div class="space-y-6 mb-6">
+    <% 3.times do |index| %>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">Post Title <%= index + 1 %></h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Brief description of the blog post content, giving readers an idea of what the post is about.
+        </p>
+        <a href="#" class="text-teal-500 hover:text-teal-700 mt-2 inline-block">Read More &rarr;</a>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Subscribe Modal (Hidden by Default) -->
+<div id="subscribe-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden flex items-center justify-center z-50">
+  <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
+    <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Subscribe to Newsletter</h2>
+    <form id="subscribe-form" data-controller="subscribe" action="/subscribe" method="post">
+      <div class="mb-4">
+        <label for="nickname" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nickname</label>
+        <input type="text" id="nickname" name="nickname" required
+               class="mt-1 p-2 w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:text-gray-300">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+        <input type="email" id="email" name="email" required
+               class="mt-1 p-2 w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:text-gray-300">
+      </div>
+      <div class="flex justify-end space-x-4">
+        <button type="button" id="close-modal"
+                class="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-300 ease-in-out">
+          Cancel
+        </button>
+        <button type="submit"
+                class="px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-75 transition duration-300 ease-in-out">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const subscribeBtn = document.getElementById('subscribe-btn');
+    const subscribeModal = document.getElementById('subscribe-modal');
+    const closeModal = document.getElementById('close-modal');
+
+    if (subscribeBtn && subscribeModal && closeModal) {
+      subscribeBtn.addEventListener('click', function() {
+        subscribeModal.classList.remove('hidden');
+      });
+
+      closeModal.addEventListener('click', function() {
+        subscribeModal.classList.add('hidden');
+      });
+
+      subscribeModal.addEventListener('click', function(e) {
+        if (e.target === subscribeModal) {
+          subscribeModal.classList.add('hidden');
+        }
+      });
+    } else {
+      console.error('One or more elements not found: subscribeBtn, subscribeModal, closeModal');
+    }
+  });
+</script>
