@@ -3,3 +3,4 @@ en:
     created: "%{resource} was successfully created"
     updated: "%{resource} was successfully updated"
     deleted: "%{resource} was successfully deleted"
+    subscribed: Subscription successful!
